@@ -17,7 +17,19 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
+	config.action_mailer.default_url_options = {
+		host: 'localhost',
+	  port: "3000"
+	}
+	config.action_mailer.delivery_method = :smtp
+		config.action_mailer.smtp_settings = {
+			:authentication => :plain,
+			:address => "smtp.mailgun.org",
+			:port => 2525,
+			:domain => "sandbox67459e5afaa5401483853dbd705915.mailgun.org",
+			:user_name => "postmaster@sandbox67459e5afaa5401483853dbd705915.mailgun.org",
+		  :password => "543832da1232c31b04139fe7a9bd3a0f"
+	 }
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass

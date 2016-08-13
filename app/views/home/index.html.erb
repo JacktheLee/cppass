@@ -1,2 +1,7 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= render partial: "/orders/form", locals: {order: @order} %>
+
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
