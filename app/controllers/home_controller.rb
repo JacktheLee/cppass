@@ -14,6 +14,7 @@ class HomeController < ApplicationController
   end
 
   def index
+    @order = Order.new
   end
 
   def mypage

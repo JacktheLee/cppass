@@ -1,0 +1,31 @@
+<div class="container">
+  <%= form_for order, html: { multipart: true } do |f| %>
+    </br>
+    <b>파일</b></br>
+    <%= f.file_field :file %>
+    </br></br>
+    <div class="sidechoice">
+      <b>인쇄</b></br>
+      <%= f.radio_button :is_double_side, :true %>
+      <%= f.label :is_double_side_true, "양면" %></br>
+      <%= f.radio_button :is_double_side, :false %>
+      <%= f.label :is_double_side_false, "단면" %>
+    </div>
+    <br>
+    <div class="colorchoice">
+      <b>색상</b></br>
+      <%= f.radio_button :is_color, :true %>
+      <%= f.label :is_color_true, "컬러" %></br>
+      <%= f.radio_button :is_color, :false %>
+      <%= f.label :is_color_false, "흑백" %>
+    </div>
+    <br>
+    <div class = "paper_size input-field col s12">
+      <b>모아찍기</b></br>
+      <%= f.select :slide_per_page, [['1면', 1],['2면',2],['4면',4], ['6면',6],['9면',9] ]  %>
+    </div>
+    <%= f.label :location, "받을 장소" %>
+    <%= f.select :location, [['중앙도서관 복사실',0], ['학생회관 복사실',1],['법대복사실',2],['동원관 복사실',3],['사회대 복사실',4],['사범대 복사실',5],['공대 복사실',6]] %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
