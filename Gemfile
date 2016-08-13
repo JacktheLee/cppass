@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
 gem 'figaro'
 gem 'carrierwave'
 gem 'fog-aws'

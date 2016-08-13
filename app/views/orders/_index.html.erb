@@ -12,15 +12,17 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Download Link</th>
+      <th>Download</th>
+      <th>Progress</th>
     </tr>
       <th>&nbsp;</th>
   </thead>
   <tbody>
-    <% @orders.each do |order| %>
+    <% orders.each do |order| %>
       <tr>
         <td><%= order.title %></td>
         <td><%= link_to "Download order", order.file_url %></td>
+        <td><%#= order.progress %>
         <td><%= button_to "Delete",  order, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete this?" %></td>
       </tr>
     <% end %>
