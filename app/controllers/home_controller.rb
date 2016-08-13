@@ -21,5 +21,6 @@ class HomeController < ApplicationController
   end
 
   def mypage
+    @orders = Order.where(user_id: current_user)
   end
 end

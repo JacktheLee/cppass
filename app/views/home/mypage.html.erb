@@ -6,7 +6,7 @@
 		</ul>
 	</div>
 	<div id="orders" class="col s12">
-    <%#= render partial: 'orders/index', locals: { :name => 'value' } %>
+    <%= render partial: 'orders/index', locals: { orders: @orders } %>
   </div>
   <div id="edit_info" class="col s12">
     <%= render partial: 'devise/registrations/edit', locals: { resource: resource, resource_name: resource_name, devise_mapping: devise_mapping } %>

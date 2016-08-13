@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
+gem 'pdf-reader'
 gem 'figaro'
 gem 'carrierwave'
 gem 'fog-aws'
