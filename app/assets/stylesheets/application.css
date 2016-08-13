@@ -35,7 +35,6 @@ main {
 
 .intro {
     
-    margin :10px;
-    vertical-align:middle
-
+    margin-top :20px;
+    vertical-align :middle;
 }
