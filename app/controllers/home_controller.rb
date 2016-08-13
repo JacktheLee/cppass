@@ -14,6 +14,9 @@ class HomeController < ApplicationController
   end
 
   def index
+  end
+
+  def show
     @order = Order.new
   end
 
