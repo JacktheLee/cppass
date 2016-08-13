@@ -91,7 +91,8 @@
 
 
 <script>  
+<%= render partial: "/orders/form", locals: {order: @order} %>
 $(document).ready(function() {
     $('select').material_select();
   });
-  </script>
+</script>

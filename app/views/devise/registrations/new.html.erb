@@ -28,10 +28,10 @@
 
   <div class="field">
 
-    <%= f.radio_button :is_printer, 1, autocomplete: "off" %>
-    <%= f.label :is_printer, "CP Gate" %><br />
-    <%= f.radio_button :is_printer, 0, autocomplete: "off" %>
-    <%= f.label :is_printer, "Student" %><br />
+    <%= f.radio_button :is_printer, :true, autocomplete: "off" %>
+    <%= f.label :is_printer_true, "CP Gate" %><br />
+    <%= f.radio_button :is_printer, :false, autocomplete: "off" %>
+    <%= f.label :is_printer_false, "Student" %><br />
   </div>
 
   <div class="actions">

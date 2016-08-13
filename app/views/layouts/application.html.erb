@@ -16,14 +16,19 @@
       <a href="/home/index" class="brand-logo black-text" style="margin-left:120px;"><%= image_tag("logo2.png",:size => "200x100")%></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:200px;">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class = "black-text" href="/index">HOME</a></li>
-        <li><a class = "black-text" href="/mypage">MY PAGE</a></li>
-        
+        <div  style= "margin-right:120px;" >
+          <li><a class = "black-text" href="/home/index">HOME</a></li>
+          <% if user_signed_in? %>
+            <li><a class = "black-text" href="/home/mypage">MyPage</a></li>
+          <% else %>
+            <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
+          <% end %>
+        </div>
       </ul>
     </div>
     </nav>
 
-    <main >
+    <main>
     <div class="container">
       <%= yield %>
     </div>

@@ -13,8 +13,17 @@
 ActiveRecord::Schema.define(version: 20160813103810) do
 
   create_table "orders", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "file"
+    t.boolean  "is_double_side"
+    t.boolean  "is_color"
+    t.integer  "slide_per_page"
+    t.integer  "price"
+    t.integer  "location"
+    t.integer  "quantity"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
