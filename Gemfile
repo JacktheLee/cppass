@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'yomu'
 gem 'jquery-turbolinks'
 gem 'pdf-reader'
 gem 'figaro'
