@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pdf-reader'
 gem 'figaro'
 gem 'carrierwave'
 gem 'fog-aws'
