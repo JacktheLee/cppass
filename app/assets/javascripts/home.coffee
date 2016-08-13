@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
+$(document).ready ->
   $('ul.tabs').tabs()
   $(".button-collapse").sideNav()
   $('select').material_select()
