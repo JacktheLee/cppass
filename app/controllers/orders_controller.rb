@@ -20,20 +20,18 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    #TODO
     @order.user_id = current_user.id
-
 
     respond_to do |format|
       if @order.save
         #@order.pages = PDF::Reader.new(open(@order.file_url)).page_count
-        @order.pages = @order.count_pages
+        @order.pages =  (@order.count_pages.to_f/@order.slide_per_page.to_f).ceil
         if @order.is_color?
           unit_price = 500
         else
           unit_price = 50
         end
-        @order.price = (@order.pages/@order.slide_per_page.to_f).ceil * unit_price * @order.quantity
+        @order.price = @order.pages * unit_price * @order.quantity
         @order.save
         flash[:notice] = 'Order was successfully created.'
         format.html { redirect_to home_mypage_path }
