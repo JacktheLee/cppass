@@ -13,22 +13,18 @@
 
     <nav name="header" class="head">
     <div class="nav-wrapper grey lighten-5">
-      <a href="/home/index" class="brand-logo black-text" style="margin-left:120px;"><%= image_tag("logo.png",:size => "200x100")%></a>
+      <a href="/home/index" class="brand-logo black-text" style="margin-left:120px;"><%= image_tag("logo2.png",:size => "200x100")%></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:200px;">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <div  style= "margin-right:120px;" >
-          <li><a class = "black-text" href="/home/index">HOME</a></li>
-          <% if user_signed_in? %>
-            <li><a class = "black-text" href="/home/mypage">MyPage</a></li>
-          <% else %>
-            <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
-          <% end %>
+        <li><a class = "black-text" href="/home/index">HOME</a></li>
+        <li><a class = "black-text" href="/mypage">MyPage</a></li>
         </div>
       </ul>
     </div>
     </nav>
 
-    <main>
+    <main >
     <div class="container">
       <%= yield %>
     </div>
@@ -38,15 +34,13 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          <h5 class="white-text">CP PASS</h5>
+          <p class="grey-text text-lighten-4">당신의 과제 테이크아웃을 위해...</p>
         </div>
-        <div class="col l4 offset-l2 s12">
+        <div class="col l4 offset-l2 s8">
           <h5 class="white-text">Links</h5>
-          <ul> <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
           </ul>
         </div>
       </div>
