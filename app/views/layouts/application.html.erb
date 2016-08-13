@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    
+<body>
+  <div id="background"></div>
+    <nav name="header" class="head">
+      <div class="nav-wrapper grey lighten-5">
+        <a href="/home/index" class="brand-logo black-text" style="margin-left:120px;"><%= image_tag("logo.png",:size => "200x100")%></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:200px;">
+          <li class="active"><a href="/home/index" class="black-text"><b>HOME</b></a></li>
+          <li><a href="/home/mypage" class="black-text"><b>MY PAGE</b></a></li>
+        
+        </ul>
+      </div>
+    </nav>
+
+
     <%= yield %>
   </body>
 </html>

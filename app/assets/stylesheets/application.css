@@ -14,3 +14,10 @@
  *= require_self
  *= require materialize/dist/css/materialize.min
  */
+.nav-wrapper {
+            height: 150px;
+}
+.head {
+            height: 100px;
+        line-height: 100px;
+    }
