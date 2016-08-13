@@ -5,24 +5,35 @@
 <% end %>
 
 <br />
-<%= link_to "New Order", new_order_path, class: "btn btn-primary" %>
 <br />
-<br />
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped highlight">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Download</th>
+      <th>Num of Pages</th>
+      <th>Quantity</th>
+      <th>Price</th>
       <th>Progress</th>
-    </tr>
+      <th>Place</th>
       <th>&nbsp;</th>
+    </tr>
   </thead>
   <tbody>
     <% orders.each do |order| %>
       <tr>
-        <td><%= link_to "Download order", order.file_url %></td>
-        <td><%= PDF::Reader.new(open(order.file_url)).page_count %>장 </td>
-        <td><%= button_to "Delete",  order, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete this?" %></td>
+        <td> <%= link_to order.file_identifier, order.file_url %></td>
+        <td><%= order.pages %>장 </td>
+        <td><%= order.quantity %>부</td>
+        <td><%= order.price %></td>
+        <% if order.progress == 0 %>
+          <td> 결제완료</td>
+        <% elsif order.progress == 0 %>
+          <td> 주문확인</td>
+        <% else %>
+          <td> 인쇄완료</td>
+        <% end %>
+        <td> <% order.location %> </td>
+        <td><%= link_to "Cancel", order, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete this?"} %></td>
       </tr>
     <% end %>
   </tbody>

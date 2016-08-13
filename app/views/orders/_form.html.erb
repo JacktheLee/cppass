@@ -20,8 +20,9 @@
     </div>
     <b>받을 장소</b>
     <%= f.select :location, [['중앙도서관 복사실',0], ['학생회관 복사실',1],['법대복사실',2],['동원관 복사실',3],['사회대 복사실',4],['사범대 복사실',5],['공대 복사실',6]] %>
-    <b>수량</b><br>
-    <%= f.number_field :quantity %>
+    <b>부수</b><br>
+    <%= f.number_field :quantity, min: 1 %>
+    <%= f.hidden_field :progress, value: 0 %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>

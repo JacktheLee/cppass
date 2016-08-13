@@ -22,9 +22,18 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     #TODO
     @order.user_id = current_user.id
-    @order.price = 100
+
+
     respond_to do |format|
       if @order.save
+        @order.pages = PDF::Reader.new(open(@order.file_url)).page_count
+        if @order.is_color?
+          unit_price = 500
+        else
+          unit_price = 50
+        end
+        @order.price = (@order.pages/@order.slide_per_page.to_f).ceil * unit_price * @order.quantity
+        @order.save
         flash[:notice] = 'Order was successfully created.'
         format.html { redirect_to :back }
         format.xml  { render xml: @order, status: :created, location: @order }
@@ -59,7 +68,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to(orders_url) }
+      format.html { redirect_to(:back) }
       format.xml  { head :ok }
     end
   end

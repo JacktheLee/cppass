@@ -17,9 +17,10 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:200px;">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <div  style= "margin-right:120px;" >
-          <li><a class = "black-text" href="/home/index">HOME</a></li>
           <% if user_signed_in? %>
+            <li><a class = "black-text" href="/orders/new">NEW ORDER</a></li>
             <li><a class = "black-text" href="/home/mypage">My Page</a></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, class: "black-text", method: "DELETE" %></li>
           <% else %>
             <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
           <% end %>
