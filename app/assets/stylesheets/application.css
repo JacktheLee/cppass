@@ -21,6 +21,8 @@
             height: 100px;
         line-height: 100px;
     }
+
+
 body {
   display: flex;
   min-height: 100vh;
@@ -29,4 +31,11 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.intro {
+    
+    margin :10px;
+    vertical-align:middle
+
 }
