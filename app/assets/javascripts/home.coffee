@@ -4,4 +4,5 @@
 
 $ ->
   $('ul.tabs').tabs()
+  $(".button-collapse").sideNav()
   return
