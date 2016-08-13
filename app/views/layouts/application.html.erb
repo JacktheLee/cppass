@@ -17,14 +17,18 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:200px;">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <div  style= "margin-right:120px;" >
-        <li><a class = "black-text" href="/index">HOME</a></li>
-        <li><a class = "black-text" href="/mypage">MyPage</a></li>
+          <li><a class = "black-text" href="/home/index">HOME</a></li>
+          <% if user_signed_in? %>
+            <li><a class = "black-text" href="/home/mypage">MyPage</a></li>
+          <% else %>
+            <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
+          <% end %>
         </div>
       </ul>
     </div>
     </nav>
 
-    <main >
+    <main>
     <div class="container">
       <%= yield %>
     </div>
@@ -39,8 +43,7 @@
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <ul> <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
