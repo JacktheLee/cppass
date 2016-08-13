@@ -21,12 +21,12 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     #TODO
-    @order.user_id = 1
-
+    @order.user_id = current_user.id
+    @order.price = 100
     respond_to do |format|
       if @order.save
         flash[:notice] = 'Order was successfully created.'
-        format.html { redirect_to orders_path }
+        format.html { redirect_to :back }
         format.xml  { render xml: @order, status: :created, location: @order }
       else
         format.html { render action: 'new' }

@@ -1,38 +1,38 @@
+<% if user_signed_in? %>
+  <%= render partial: "/orders/form", locals: {order: @order} %>
+<% end %>
 
-  <div class="row" >
-    <div class="col s12 m9 l10">
-      <center>
-          <img class="intro"src="/assets/intro1.png" alt="busy"> <h3 class="intro_caption">급하게 나오느라 과제 인쇄를 못하셨나요?</h3>
-      </center>
-    </div>
-    <div class="col s12 m9 l10">
-        <center>
-          <img class="intro" src="/assets/intro2.png" alt="late">
-          <h3>인쇄소 앞 길게 늘어선 줄, 힘드신가요?</h3>
-        </center>
-    </div>
-        <div class="col s12 m9 l10">
-        <center>
-          <img class="intro" src="/assets/intro3.png" alt="cppass">
-          <h3>이제 기다리지 마세요!</h3>
-          <p><h3><b style="color:#283593" >CPPASS</b>로 쉽고 빠르게 인쇄하세요</h3></p>
-
-        
-        <p><h2> &nbsp;  </h2></p>
-        <p><h2> &nbsp;  </h2></p>
-
-        <h3>당신의 <span style="color:#ff1744">현명한</span> 학교생활</h3>
-        <h3><p><b style="color:#283593" >CPPASS</b>가 함께합니다.</p></h3>
-        </center>
-    </div>
-
-
+<div class="container">
+<div class="row" >
+  <div class="col s12 m6 l6">
+    <center>
+      <img class="intro"src="/assets/intro1.png" alt="busy" style="width: 300px"> 
+      <h4 class="intro_caption">급하게 나오느라 과제 인쇄를 못하셨나요?</h4>
+    </center>
   </div>
+  <div class="col s12 m6 l6">
+    <center>
+      <img class="intro" src="/assets/intro2.png" alt="late" style="width: 300px">
+      <h4>인쇄소 앞 길게 늘어선 줄, 힘드신가요?</h4>
+    </center>
+  </div>
+    <p><h2> &nbsp;  </h2></p>
+  <div class="col s12 m9 l10" style = "margin-left: 60px">
+    <center>
+      <img class="intro" src="/assets/intro3.png" alt="cppass" style="width: 300px">
+      <h3>이제 기다리지 마세요!</h3>
+      <p><h4><b style="color:#283593" >CPPASS</b>로 쉽고 빠르게 인쇄하세요</h4></p>
+
+      <p><h2> &nbsp;  </h2></p>
+      <p><h2> &nbsp;  </h2></p>
+
+      <h3>당신의 <span style="color:#ff1744">현명한</span> 학교생활</h3>
+      <h3><p><b style="color:#283593" >CPPASS</b>가 함께합니다.</p></h3>
+    </center>
+  </div>
+</div> 
+
+</div>
+<!-- end of row -->
 
 
-<script>  
-<%= render partial: "/orders/form", locals: {order: @order} %>
-$(document).ready(function() {
-    $('select').material_select();
-  });
-</script>
