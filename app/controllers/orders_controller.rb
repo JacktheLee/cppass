@@ -72,6 +72,8 @@ class OrdersController < ApplicationController
     end
   end
 
+  private
+
   def order_params
     params.require(:order).permit(:title, :file, :is_double_side, :is_color, :slide_per_page, :price, :location, :quantity, :progress)
   end

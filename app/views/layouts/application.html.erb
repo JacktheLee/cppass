@@ -10,52 +10,61 @@
   </head>
 
   <body>
-
-    <nav name="header" class="head">
-    <div class="nav-wrapper grey lighten-5">
-      <a href="/home/index" class="brand-logo black-text" style="margin-left:120px;"><%= image_tag("logo2.png",:size => "200x100")%></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:200px;">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <div  style= "margin-right:120px;" >
-          <% if user_signed_in? %>
-            <li><a class = "black-text" href="/orders/new">NEW ORDER</a></li>
-            <li><a class = "black-text" href="/home/mypage">My Page</a></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, class: "black-text", method: "DELETE" %></li>
-          <% else %>
-            <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
-          <% end %>
+    <div class="nav-fixed">
+      <nav name="header" class="head">
+        <div class="nav-wrapper grey lighten-5">
+          <a href="/home/index" class="brand-logo black-text" style="margin-left:120px;"><%= image_tag("logo2.png",:size => "200x100")%></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <div  style= "margin-right:120px;" >
+              <% if user_signed_in? %>
+                <li><a class = "black-text" href="/orders/new">NEW ORDER</a></li>
+                <li><a class = "black-text" href="/home/mypage">My Page</a></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, class: "black-text", method: "DELETE" %></li>
+              <% else %>
+                <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
+              <% end %>
+            </div>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <% if user_signed_in? %>
+              <li><a class = "black-text" href="/orders/new">NEW ORDER</a></li>
+              <li><a class = "black-text" href="/home/mypage">My Page</a></li>
+              <li><%= link_to "Log Out", destroy_user_session_path, class: "black-text", method: "DELETE" %></li>
+            <% else %>
+              <li><a class="black-text" href="/users/sign_in">LOGIN</a></li>
+            <% end %>
+          </ul>
         </div>
-      </ul>
+      </nav>
     </div>
-    </nav>
 
-    <main >
-    <div class="container">
+    <main>
+    <div class="container" style="margin-top:100px">
       <%= yield %>
     </div>
     </main>
 
     <footer class="page-footer indigo darken-4">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">CP PASS</h5>
-          <p class="grey-text text-lighten-4">당신의 과제 테이크아웃을 위해...</p>
-        </div>
-        <div class="col l4 offset-l2 s8">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
       <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">CP PASS</h5>
+            <p class="grey-text text-lighten-4">당신의 과제 테이크아웃을 위해...</p>
+          </div>
+          <div class="col l4 offset-l2 s8">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

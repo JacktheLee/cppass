@@ -4,6 +4,6 @@
 
 $ ->
   $('ul.tabs').tabs()
-  $(".button-collapse").sideNav()
   $('select').material_select()
+  $('.button-collapse').sideNav()
   return
