@@ -14,9 +14,11 @@
  *= require_self
  *= require materialize/dist/css/materialize.min
  */
+ nav {
+     position: fixed;
+ }
 .nav-wrapper {
             height: 150px;
-            position: fixed;
 }
 .head {
             height: 100px;
@@ -29,12 +31,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
               }
-
 main {
   flex: 1 0 auto;
 }
 
 .intro {
-    margin-top :20px;
     vertical-align :middle;
 }
