@@ -26,7 +26,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        @order.pages = PDF::Reader.new(open(@order.file_url)).page_count
+        #@order.pages = PDF::Reader.new(open(@order.file_url)).page_count
+        @order.pages = @order.count_pages
         if @order.is_color?
           unit_price = 500
         else
@@ -35,7 +36,7 @@ class OrdersController < ApplicationController
         @order.price = (@order.pages/@order.slide_per_page.to_f).ceil * unit_price * @order.quantity
         @order.save
         flash[:notice] = 'Order was successfully created.'
-        format.html { redirect_to :back }
+        format.html { redirect_to home_mypage_path }
         format.xml  { render xml: @order, status: :created, location: @order }
       else
         format.html { render action: 'new' }
